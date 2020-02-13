@@ -87,7 +87,7 @@ int regVal(char* r){
 
 // gets each field of struct and combines them into 32 bit
 int putTogether(RFormat *instruct){
-	return getFunCode(instruct->opcode) + (instruct->i << 6) + (regVal(instruct->rd) << 11) + (regVal(instruct->rt) << 16) + (regVal(instruct->rd) << 21);
+	return getFunCode(instruct->opcode) + (instruct->i << 6) + (regVal(instruct->rd) << 11) + (regVal(instruct->rt) << 16) + (regVal(instruct->rs) << 21);
 }
 
 // goes through 32bits and makes a 1|0 conversion
