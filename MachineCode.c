@@ -49,6 +49,7 @@ int getFunCode(char* opcode){
 
 // gets register values
 int regVal(char* r){
+	if (strcmp(r,"0") == 0) return 0;
 	if(strcmp(r,"zero") == 0) return 0;
 	if(strcmp(r,"at") == 0) return 1;
 	if(strcmp(r,"v0") == 0) return 2;
@@ -206,8 +207,10 @@ void scanInput(RFormat *instruct){
 }
 
 // Starts
-int main(void){	
-	RFormat* instruction = Struct RFormat;
+int main(void){
+	//properly setting up the instruction struct to be used
+	RFormat* instruction, instruct;
+	instruction = &instruct;
 	printf("Enter an R-format instruction:\n");
 	//initializing object
 	instruction->i = 0;
